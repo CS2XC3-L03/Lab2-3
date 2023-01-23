@@ -2,6 +2,10 @@ import matplotlib.pyplot as plt
 from bad_sorts import *
 from utils import time_sort
 
+"""
+Experiment 1: Compare the performance of the three bad sorts.
+"""
+
 
 def main():
     NUM_OF_RUNS = 10
@@ -16,9 +20,12 @@ def main():
         time_bubble.append(time_sort(bubble_sort, L, NUM_OF_RUNS))
 
     # Plot the results
+
+    # plot data
     plt.plot(xs, time_insertion, label="Insertion")
     plt.plot(xs, time_selection, label="Selection")
     plt.plot(xs, time_bubble, label="Bubble")
+    # add legend, label the axis, and give the plot a title
     plt.legend()
     plt.xlabel("List length")
     plt.ylabel("Time (s)")
