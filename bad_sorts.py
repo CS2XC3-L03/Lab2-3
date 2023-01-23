@@ -118,18 +118,3 @@ def find_min_max_indices(L, n):
         if L[i] < L[min_index]: min_index = i
         if L[i] > L[max_index]: max_index = i
     return min_index, max_index
-
-# [10,9,8,7,6,5,4,3,2,1]
-
-# iterations: 0,1,2,3,4
-# i = 0, min_index = 9, max_index = 0
-#  swap(i, 9)
-#  swap(9, max_index)
-# i = 1, min_index = 8, max_index = 1
-# Swap(1, 8)
-
-# i = 2, min_index = 7, max_index = 2
-# i = 3, min_index = 6, max_index = 3
-# i = 4, min_index = 5, max_index = 4
-
-

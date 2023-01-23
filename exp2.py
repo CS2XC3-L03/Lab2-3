@@ -1,4 +1,3 @@
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 from utils import time_sort
 from bad_sorts import selection_sort2, bubble_sort2, create_random_list
@@ -10,15 +9,16 @@ Experiment 2: Compare the performance of the improved versions of selection sort
 
 def main():
     NUM_OF_RUNS = 10
-    xs = [10, 100, 1000, 10000]
-    time_selection = []
-    time_bubble = []
+    xs = [10, 50, 100, 500, 1000, 5000, 10000]
+    time_selection, time_bubble = [], []
     for i in xs:
         L = create_random_list(i, 100)
         time_selection.append(time_sort(selection_sort2, L, NUM_OF_RUNS))
         time_bubble.append(time_sort(bubble_sort2, L, NUM_OF_RUNS))
+    # plot data
     plt.plot(xs, time_selection, label="Selection")
     plt.plot(xs, time_bubble, label="Bubble")
+    # add legend, label the axis, and give the plot a title
     plt.legend()
     plt.xlabel("List length")
     plt.ylabel("Time (s)")
