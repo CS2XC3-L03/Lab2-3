@@ -16,8 +16,8 @@ def main():
     time_quick_sort1, time_quick_sort2 = [], []
     for i in xs:
         L = create_random_list(i, i)
-        time_quick_sort1.append(time_sort(quicksort, L, NUM_OF_RUNS))
-        time_quick_sort2.append(time_sort(quicksort2, L, NUM_OF_RUNS))
+        time_quick_sort1.append(time_sort(quicksort, L[:], NUM_OF_RUNS))
+        time_quick_sort2.append(time_sort(quicksort2, L[:], NUM_OF_RUNS))
 
     # plot data
     plt.plot(xs, time_quick_sort1, label="Quick Sort")

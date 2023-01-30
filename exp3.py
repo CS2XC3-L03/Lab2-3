@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
-from bad_sorts import create_near_sorted_list, bubble_sort, selection_sort, insertion_sort
+from bad_sorts import (
+    create_near_sorted_list,
+    bubble_sort,
+    selection_sort,
+    insertion_sort,
+)
 from utils import time_sort
 
 """
@@ -8,14 +13,14 @@ Experiment 1: Compare the performance of the three bad sorts.
 
 
 def main():
-    NUM_OF_RUNS = 10
-    swaps = [1,2,3]
+    NUM_OF_RUNS = 100
+    swaps = [10, 100, 1000, 5000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in swaps:
-        L = create_near_sorted_list(5000, 100, i)
-        time_insertion.append(time_sort(insertion_sort, L, NUM_OF_RUNS))
-        time_selection.append(time_sort(selection_sort, L, NUM_OF_RUNS))
-        time_bubble.append(time_sort(bubble_sort, L, NUM_OF_RUNS))
+        L = create_near_sorted_list(5000, 5000, i)
+        time_insertion.append(time_sort(insertion_sort, L[:], NUM_OF_RUNS))
+        time_selection.append(time_sort(selection_sort, L[:], NUM_OF_RUNS))
+        time_bubble.append(time_sort(bubble_sort, L[:], NUM_OF_RUNS))
 
     # plot data
     plt.plot(swaps, time_insertion, label="Insertion")

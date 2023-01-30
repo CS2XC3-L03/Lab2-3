@@ -9,13 +9,13 @@ Experiment 1: Compare the performance of the three bad sorts.
 
 def main():
     NUM_OF_RUNS = 100
-    xs = [10, 100, 1000, 10000]
+    xs = [10, 100, 1000, 5000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in xs:
         L = create_random_list(i, i)
-        time_insertion.append(time_sort(insertion_sort, L, NUM_OF_RUNS))
-        time_selection.append(time_sort(selection_sort, L, NUM_OF_RUNS))
-        time_bubble.append(time_sort(bubble_sort, L, NUM_OF_RUNS))
+        time_insertion.append(time_sort(insertion_sort, L[:], NUM_OF_RUNS))
+        time_selection.append(time_sort(selection_sort, L[:], NUM_OF_RUNS))
+        time_bubble.append(time_sort(bubble_sort, L[:], NUM_OF_RUNS))
 
     # plot data
     plt.plot(xs, time_insertion, label="Insertion")
