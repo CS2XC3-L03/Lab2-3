@@ -31,6 +31,7 @@ def quicksort_copy(L):
             right.append(num)
     return quicksort_copy(left) + [pivot] + quicksort_copy(right)
 
+# Improved quicksort
 def quicksort2(L):
     copy = quicksort_copy2(L)
     for i in range(len(L)):
