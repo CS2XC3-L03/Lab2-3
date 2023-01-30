@@ -5,7 +5,7 @@ from utils import time_sort
 from bad_sorts import create_random_list
 
 """
-Experiment 4: Compare the performance of the three good sorts.
+Experiment 6: Compare the performance of the two quick sorts.
 """
 
 sys.setrecursionlimit(5200)

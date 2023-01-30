@@ -15,16 +15,22 @@ Experiment 2: Compare the performance of the improved versions of selection sort
 
 def main():
     NUM_OF_RUNS = 100
-    xs = [10, 100, 1000, 5000]
+    xs = [10, 100, 1000]
     time_selection1, time_selection2 = [], []
     time_bubble1, time_bubble2 = [], []
 
     for i in xs:
         L = create_random_list(i, i)
+        print(f'start sorting list of length {i}...')
+        print('bad selection sort...')
         time_selection1.append(time_sort(selection_sort, L[:], NUM_OF_RUNS))
+        print('improved selection sort...')
         time_selection2.append(time_sort(selection_sort2, L[:], NUM_OF_RUNS))
+        print('bad bubble sort...')
         time_bubble1.append(time_sort(bubble_sort, L[:], NUM_OF_RUNS))
+        print('improved bubble sort...')
         time_bubble2.append(time_sort(bubble_sort2, L[:], NUM_OF_RUNS))
+        print('done')
 
     # plot data for selection sort
     plt.plot(xs, time_selection1, label="Bad Selection Sort")
@@ -33,7 +39,7 @@ def main():
     plt.legend()
     plt.xlabel("List length")
     plt.ylabel("Time (s)")
-    plt.title("Time to sort a list of length n")
+    plt.title("Bad vs. Improved Selection Sort")
     plt.show()
 
     # plot data for bubble sort
@@ -43,7 +49,7 @@ def main():
     plt.legend()
     plt.xlabel("List length")
     plt.ylabel("Time (s)")
-    plt.title("Time to sort a list of length n")
+    plt.title("Bad vs. Improved Bubble Sort")
     plt.show()
 
 

@@ -89,12 +89,9 @@ def bubble_sort2(L):
     n = len(L) -1
     for i in range(n):
         min_index = find_min_index(L, i)
-        for j in range(i + 2, min_index + 1):
+        for j in range(i + 2, min_index):
             L[j - 1] = L[j]
         L[min_index], L[i] = L[i], L[min_index]
-
-    return L
-
 
 
 # ******************* Selection sort code *******************

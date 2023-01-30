@@ -8,7 +8,7 @@ from bad_sorts import (
 from utils import time_sort
 
 """
-Experiment 1: Compare the performance of the three bad sorts.
+Experiment 3: Compare the performance of the three bad sorts, with increasing amounts of swaps.
 """
 
 
