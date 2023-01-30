@@ -12,11 +12,11 @@ Experiment 5: how much "unsorted" will let quick sort faster than merge sort and
 
 
 def main():
-    NUM_OF_RUNS = 100
-    xs = [i * 1000 for i in range(0, 5)]
+    NUM_OF_RUNS = 10000
+    xs = [i * 10000 for i in range(0, 5)]
     time_quick_sort, time_heap_sort, time_merge_sort = [], [], []
     for i in xs:
-        L = create_near_sorted_list(3000, 3000, i)
+        L = create_near_sorted_list(100, 100, i)
         print(f"start sorting (#swaps={i})...")
         print("quick sort...")
         time_quick_sort.append(time_sort(quicksort, L[:], NUM_OF_RUNS))
