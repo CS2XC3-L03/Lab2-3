@@ -31,10 +31,38 @@ def quicksort_copy(L):
             right.append(num)
     return quicksort_copy(left) + [pivot] + quicksort_copy(right)
 
+def quicksort2(L):
+    copy = quicksort_copy2(L)
+    for i in range(len(L)):
+        L[i] = copy[i]
+
+
+def quicksort_copy2(L):
+    if len(L) < 2:
+        return L
+    lp, rp = min(L[0], L[1]), max(L[0], L[1])
+    left, mid, right = [], [], []
+    for num in L[2:]:
+        if num < lp:
+            left.append(num)
+        elif lp <= num <= rp:
+            mid.append(num)
+        else:
+            right.append(num)
+    return (
+        quicksort_copy2(left)
+        + [lp]
+        + quicksort_copy2(mid)
+        + [rp]
+        + quicksort_copy2(right)
+    )
+
+
 # *************************************
 
 
 # ************ Merge Sort *************
+
 
 def mergesort(L):
     if len(L) <= 1:
@@ -70,14 +98,17 @@ def merge(left, right):
                 j += 1
     return L
 
+
 # *************************************
 
 # ************* Heap Sort *************
+
 
 def heapsort(L):
     heap = Heap(L)
     for _ in range(len(L)):
         heap.extract_max()
+
 
 class Heap:
     length = 0
@@ -96,10 +127,16 @@ class Heap:
         largest_known = i
         if self.left(i) < self.length and self.data[self.left(i)] > self.data[i]:
             largest_known = self.left(i)
-        if self.right(i) < self.length and self.data[self.right(i)] > self.data[largest_known]:
+        if (
+            self.right(i) < self.length
+            and self.data[self.right(i)] > self.data[largest_known]
+        ):
             largest_known = self.right(i)
         if largest_known != i:
-            self.data[i], self.data[largest_known] = self.data[largest_known], self.data[i]
+            self.data[i], self.data[largest_known] = (
+                self.data[largest_known],
+                self.data[i],
+            )
             self.heapify(largest_known)
 
     def insert(self, value):
@@ -116,11 +153,17 @@ class Heap:
 
     def bubble_up(self, i):
         while i > 0 and self.data[i] > self.data[self.parent(i)]:
-            self.data[i], self.data[self.parent(i)] = self.data[self.parent(i)], self.data[i]
+            self.data[i], self.data[self.parent(i)] = (
+                self.data[self.parent(i)],
+                self.data[i],
+            )
             i = self.parent(i)
 
     def extract_max(self):
-        self.data[0], self.data[self.length - 1] = self.data[self.length - 1], self.data[0]
+        self.data[0], self.data[self.length - 1] = (
+            self.data[self.length - 1],
+            self.data[0],
+        )
         max_value = self.data[self.length - 1]
         self.length -= 1
         self.heapify(0)
@@ -137,15 +180,15 @@ class Heap:
 
     def __str__(self):
         height = math.ceil(math.log(self.length + 1, 2))
-        whitespace = 2 ** height
+        whitespace = 2**height
         s = ""
         for i in range(height):
-            for j in range(2 ** i - 1, min(2 ** (i + 1) - 1, self.length)):
+            for j in range(2**i - 1, min(2 ** (i + 1) - 1, self.length)):
                 s += " " * whitespace
                 s += str(self.data[j]) + " "
             s += "\n"
             whitespace = whitespace // 2
         return s
 
+
 # *************************************
-    

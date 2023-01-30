@@ -12,10 +12,9 @@ sys.setrecursionlimit(5200)
 
 def main():
     NUM_OF_RUNS = 100
-    xs = [10, 100, 1000, 2000, 4000]
+    xs = [10, 100, 1000, 2000, 4000, 5000]
     time_quick_sort, time_heap_sort, time_merge_sort = [], [], []
     for i in xs:
-        print()
         L = create_random_list(i, i)
         time_quick_sort.append(time_sort(quicksort, L, NUM_OF_RUNS))
         time_heap_sort.append(time_sort(heapsort, L, NUM_OF_RUNS))
@@ -30,6 +29,7 @@ def main():
     plt.xlabel("List length")
     plt.ylabel("Time (s)")
     plt.title("Time to sort a list of length n")
+    print('plotting')
     plt.show()
 
 

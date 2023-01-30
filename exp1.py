@@ -8,7 +8,7 @@ Experiment 1: Compare the performance of the three bad sorts.
 
 
 def main():
-    NUM_OF_RUNS = 10
+    NUM_OF_RUNS = 100
     xs = [10, 100, 1000, 10000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in xs:
