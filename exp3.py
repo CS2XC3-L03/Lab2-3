@@ -14,13 +14,18 @@ Experiment 3: Compare the performance of the three bad sorts, with increasing am
 
 def main():
     NUM_OF_RUNS = 100
-    swaps = [10, 100, 1000, 5000]
+    swaps = [10, 50, 100, 500, 1000, 5000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in swaps:
         L = create_near_sorted_list(5000, 5000, i)
+        print(f'start sorting (swaps={i})...')
+        print('insertion sort...')
         time_insertion.append(time_sort(insertion_sort, L[:], NUM_OF_RUNS))
+        print('selection sort...')
         time_selection.append(time_sort(selection_sort, L[:], NUM_OF_RUNS))
+        print('bubble sort...')
         time_bubble.append(time_sort(bubble_sort, L[:], NUM_OF_RUNS))
+        print('done')
 
     # plot data
     plt.plot(swaps, time_insertion, label="Insertion")

@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import sys
 from good_sorts import quicksort, quicksort2
-from utils import time_sort
 from bad_sorts import create_random_list
+from utils import time_sort
 
 """
 Experiment 6: Compare the performance of the two quick sorts.

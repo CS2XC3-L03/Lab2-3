@@ -1,25 +1,30 @@
 import matplotlib.pyplot as plt
 import sys
-from good_sorts import *
-from utils import time_sort
 from bad_sorts import create_random_list
+from good_sorts import quicksort, heapsort, mergesort
+from utils import time_sort
 
 """
 Experiment 4: Compare the performance of the three good sorts.
 """
 
-sys.setrecursionlimit(5200)
+sys.setrecursionlimit(5000)
 
 
 def main():
-    NUM_OF_RUNS = 100
-    xs = [10, 100, 1000, 2000]
+    NUM_OF_RUNS = 1000
+    xs = [10, 50, 100, 500, 1000, 2000]
     time_quick_sort, time_heap_sort, time_merge_sort = [], [], []
     for i in xs:
         L = create_random_list(i, i)
+        print(f"start sorting (length={i})...")
+        print("quick sort...")
         time_quick_sort.append(time_sort(quicksort, L[:], NUM_OF_RUNS))
+        print("heap sort...")
         time_heap_sort.append(time_sort(heapsort, L[:], NUM_OF_RUNS))
+        print("merge sort...")
         time_merge_sort.append(time_sort(mergesort, L[:], NUM_OF_RUNS))
+        print("done")
 
     # plot data
     plt.plot(xs, time_quick_sort, label="Quick Sort")

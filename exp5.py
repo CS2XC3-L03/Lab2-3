@@ -1,7 +1,7 @@
-import sys
-from good_sorts import quicksort, mergesort, heapsort
-from bad_sorts import create_near_sorted_list
 import matplotlib.pyplot as plt
+import sys
+from bad_sorts import create_near_sorted_list
+from good_sorts import quicksort, mergesort, heapsort
 from utils import time_sort
 
 sys.setrecursionlimit(10200)

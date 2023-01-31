@@ -1,5 +1,10 @@
 import matplotlib.pyplot as plt
-from bad_sorts import *
+from bad_sorts import (
+    create_random_list,
+    insertion_sort,
+    selection_sort,
+    bubble_sort,
+)
 from utils import time_sort
 
 """
