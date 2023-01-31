@@ -13,7 +13,7 @@ Experiment 3: Compare the performance of the three bad sorts, with increasing am
 
 
 def main():
-    NUM_OF_RUNS = 10
+    NUM_OF_RUNS = 100
     swaps = [0, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in swaps:
@@ -33,9 +33,9 @@ def main():
     plt.plot(swaps, time_bubble, label="Bubble")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length")
+    plt.xlabel("Number of swaps")
     plt.ylabel("Time (s)")
-    plt.title("Time to sort a list of length n")
+    plt.title("Time to sort a list of length 5000 with varying swaps")
     plt.show()
 
 
