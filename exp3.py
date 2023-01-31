@@ -13,8 +13,8 @@ Experiment 3: Compare the performance of the three bad sorts, with increasing am
 
 
 def main():
-    NUM_OF_RUNS = 100
-    swaps = [10, 50, 100, 500, 1000, 5000]
+    NUM_OF_RUNS = 10
+    swaps = [0, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000]
     time_insertion, time_selection, time_bubble = [], [], []
     for i in swaps:
         L = create_near_sorted_list(5000, 5000, i)
