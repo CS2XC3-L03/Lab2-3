@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import sys
+from sys import setrecursionlimit
 from bad_sorts import create_near_sorted_list
 from good_sorts import quicksort, mergesort, heapsort
 from utils import time_sort
@@ -8,7 +8,8 @@ from utils import time_sort
 Experiment 5: how much "unsorted" will let quick sort faster than merge sort and heap sort?
 """
 
-sys.setrecursionlimit(5200)
+setrecursionlimit(5200)
+
 
 def main():
     NUM_OF_RUNS = 100
@@ -25,7 +26,7 @@ def main():
         time_merge_sort.append(time_sort(mergesort, L[:], NUM_OF_RUNS))
         print("done")
 
-    print('plotting...')
+    print("plotting...")
     # plot data
     plt.plot(xs, time_quick_sort, label="Quick Sort")
     plt.plot(xs, time_heap_sort, label="Heap Sort")

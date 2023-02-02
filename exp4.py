@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import sys
+from sys import setrecursionlimit
 from bad_sorts import create_random_list
 from good_sorts import quicksort, heapsort, mergesort
 from utils import time_sort
@@ -8,7 +8,7 @@ from utils import time_sort
 Experiment 4: Compare the performance of the three good sorts.
 """
 
-sys.setrecursionlimit(5200)
+setrecursionlimit(5200)
 
 
 def main():
