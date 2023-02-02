@@ -8,12 +8,12 @@ from utils import time_sort
 Experiment 4: Compare the performance of the three good sorts.
 """
 
-sys.setrecursionlimit(5000)
+sys.setrecursionlimit(5200)
 
 
 def main():
-    NUM_OF_RUNS = 1000
-    xs = [10, 50, 100, 500, 1000, 2000]
+    NUM_OF_RUNS = 100
+    xs = [10, 50, 100, 500, 1000, 2000, 3000, 4000, 5000]
     time_quick_sort, time_heap_sort, time_merge_sort = [], [], []
     for i in xs:
         L = create_random_list(i, i)
