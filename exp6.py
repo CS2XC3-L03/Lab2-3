@@ -24,9 +24,9 @@ def main():
     plt.plot(xs, time_quick_sort2, label="Improved Quick Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length")
+    plt.xlabel("Array length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Time to sort a list of length n")
+    plt.title("Quicksort vs Improved Quicksort on an Array of length n")
     print('plotting')
     plt.show()
 

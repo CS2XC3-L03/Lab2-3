@@ -26,16 +26,16 @@ def main():
         time_merge_sort.append(time_sort(mergesort, L[:], NUM_OF_RUNS))
         print("done")
 
+    print("plotting...")
     # plot data
     plt.plot(xs, time_quick_sort, label="Quick Sort")
     plt.plot(xs, time_heap_sort, label="Heap Sort")
     plt.plot(xs, time_merge_sort, label="Merge Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length")
+    plt.xlabel("Array length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Time to sort a list of length n")
-    print("plotting")
+    plt.title("Quicksort vs Heapsort vs Mergesort on an Array of length n")
     plt.show()
 
 
