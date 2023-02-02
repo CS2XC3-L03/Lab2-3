@@ -15,7 +15,7 @@ Experiment 2: Compare the performance of the improved versions of selection sort
 
 def main():
     NUM_OF_RUNS = 100
-    xs = [10, 50, 100, 500, 1000, 2000, 3000, 4000, 5000]
+    xs = [10, 50, 100, 500, 1000, 5000]
     time_selection1, time_selection2 = [], []
     time_bubble1, time_bubble2 = [], []
 
