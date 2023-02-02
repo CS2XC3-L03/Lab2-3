@@ -33,9 +33,9 @@ def main():
     plt.plot(xs, time_merge_sort, label="Merge Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("Array length (n)")
+    plt.xlabel("List length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Quicksort vs Heapsort vs Mergesort on an Array of length n")
+    plt.title("Quicksort vs Heapsort vs Mergesort on Lists of length n")
     plt.show()
 
 
