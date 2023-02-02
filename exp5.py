@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
 from sys import setrecursionlimit
+import matplotlib.pyplot as plt
 from bad_sorts import create_near_sorted_list
 from good_sorts import quicksort, mergesort, heapsort
 from utils import time_sort
@@ -13,7 +13,7 @@ setrecursionlimit(5200)
 
 def main():
     NUM_OF_RUNS = 100
-    xs = [0, 10, 50, 100, 500, 1000, 2000]
+    xs = [0, 10, 50, 100, 500, 1000, 5000]
     time_quick_sort, time_heap_sort, time_merge_sort = [], [], []
     for i in xs:
         L = create_near_sorted_list(2000, 2000, i)
