@@ -40,7 +40,7 @@ def main():
     plt.legend()
     plt.xlabel("List length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Bad vs. Improved Selection Sort on Lists of length n")
+    plt.title("Bad vs. Improved Selection Sort on Lists of Size n")
     plt.show()
 
     # plot data for bubble sort
@@ -50,7 +50,7 @@ def main():
     plt.legend()
     plt.xlabel("List length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Bad vs. Improved Bubble Sort on Lists of length n")
+    plt.title("Bad vs. Improved Bubble Sort on Lists of Size n")
     plt.show()
 
 

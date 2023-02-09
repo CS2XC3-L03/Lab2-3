@@ -37,7 +37,7 @@ def main():
     plt.xlabel("Number of swaps (n)")
     plt.ylabel("Time (s)")
     plt.title(
-        "Improved Insertion, selection, and bubble sort on a near sorted list of length 5000 with n swaps"
+        "Improved Insertion, Selection, and Bubble sort on Near-sorted Lists of Size 5000 With n Swaps"
     )
     plt.show()
 

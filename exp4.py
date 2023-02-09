@@ -35,7 +35,7 @@ def main():
     plt.legend()
     plt.xlabel("List length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Quicksort vs Heapsort vs Mergesort on Lists of length n")
+    plt.title("Performance of Good Sorts on Lists of Size n")
     plt.show()
 
 
