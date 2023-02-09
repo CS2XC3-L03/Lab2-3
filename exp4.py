@@ -33,7 +33,7 @@ def main():
     plt.plot(xs, time_merge_sort, label="Merge Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length (n)")
+    plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
     plt.title("Performance of Good Sorts on Lists of Size n")
     plt.show()

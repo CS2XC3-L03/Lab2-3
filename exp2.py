@@ -38,7 +38,7 @@ def main():
     plt.plot(xs, time_selection2, label="Improved Selection Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length (n)")
+    plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
     plt.title("Bad vs. Improved Selection Sort on Lists of Size n")
     plt.show()
@@ -48,7 +48,7 @@ def main():
     plt.plot(xs, time_bubble2, label="Improved Bubble Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length (n)")
+    plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
     plt.title("Bad vs. Improved Bubble Sort on Lists of Size n")
     plt.show()
