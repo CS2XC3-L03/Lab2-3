@@ -31,6 +31,7 @@ def quicksort_copy(L):
             right.append(num)
     return quicksort_copy(left) + [pivot] + quicksort_copy(right)
 
+
 # Improved quicksort
 def quicksort2(L):
     copy = quicksort_copy2(L)
@@ -99,6 +100,13 @@ def merge(left, right):
                 j += 1
     return L
 
+
+def bottom_up_mergesort(L):
+    width, num = 1, len(L)
+    while width < num:
+        for i in range(0, num, 2 * width):
+            L[i : i + 2 * width] = merge(L[i : i + width], L[i + width : i + 2 * width])
+        width *= 2
 
 # *************************************
 
