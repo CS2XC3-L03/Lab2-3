@@ -33,9 +33,9 @@ def main():
     plt.plot(xs, time_bubble, label="Bubble")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length (n)")
+    plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
-    plt.title("bad sorts on Lists of length n")
+    plt.title("Performance of Bad Sorts on Lists of Size n")
     plt.show()
 
 
