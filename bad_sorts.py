@@ -102,7 +102,8 @@ def find_min_index(L, n):
 def selection_sort2(L):
     for i in range(len(L) // 2):
         min_index, max_index = find_min_max_indices(L, i)
-        swap(L, max_index, min_index)
+        swap(L, max_index, len(L) - 1 - i)
+        swap(L, min_index, i)
 
 
 def find_min_max_indices(L, n):
