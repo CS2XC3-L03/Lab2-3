@@ -32,7 +32,7 @@ def main():
     plt.legend()
     plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
-    plt.title("Performance of Insertion sort, Quicksort and Mergesort on lists of size n")
+    plt.title("Insertion Sort vs Quicksort vs Mergesort on Lists of Size n")
     plt.show()
 
 

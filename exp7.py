@@ -35,7 +35,7 @@ def main():
     plt.legend()
     plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
-    plt.title("Merge sort vs Bottom-up Merge sort on a list of size n")
+    plt.title("Mergesort vs Bottom-up Mergesort on List of Size n")
     plt.show()
 
 

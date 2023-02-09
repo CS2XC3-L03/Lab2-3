@@ -32,7 +32,7 @@ def main():
     plt.legend()
     plt.xlabel("List length (n)")
     plt.ylabel("Time (s)")
-    plt.title("Quicksort vs Dual Pivot Quicksort on lists of length n")
+    plt.title("Quicksort vs Dual Pivot Quicksort on Lists of Size n")
     plt.show()
 
 
