@@ -30,7 +30,7 @@ def main():
     plt.plot(xs, time_quick_sort2, label="Dual Pivot Quick Sort")
     # add legend, label the axis, and give the plot a title
     plt.legend()
-    plt.xlabel("List length (n)")
+    plt.xlabel("List size (n)")
     plt.ylabel("Time (s)")
     plt.title("Quicksort vs Dual Pivot Quicksort on Lists of Size n")
     plt.show()
