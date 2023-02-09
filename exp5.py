@@ -35,7 +35,7 @@ def main():
     plt.legend()
     plt.xlabel("Number of swaps (n)")
     plt.ylabel("Time (s)")
-    plt.title("Quicksort vs Heapsort vs Mergesort on a near sorted array with n swaps")
+    plt.title("Quicksort vs Heapsort vs Mergesort on Near-sorted List of Size 2000 With n Swaps")
     plt.show()
 
 
