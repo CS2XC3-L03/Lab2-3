@@ -1,9 +1,13 @@
-# Lab 2-3
+# Lab 2-3: Sorting Algorithms
 
 ## Setup and Installation
 
+**prerequisites:** Python 3.6 or higher
+
 - create new virtual environment `python3 -m venv <name-of-venv>`
-- activate virtual environment `source <name-of-venv>/Scripts/activate`
+- activate virtual environment
+  - Windows: `<name-of-venv>\Scripts\activate`
+  - MacOS/Linux: `source <name-of-venv>/bin/activate`
 - install requirements `pip install -r requirements.txt`
 
 ## Contributing
