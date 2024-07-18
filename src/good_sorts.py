@@ -1,30 +1,18 @@
 import math
 
-"""
-This file corresponds to the first graded lab of 2XC3.
-Feel free to modify and/or add functions to this file.
 
-In contains traditional implementations for:
-1) Quick sort
-2) Merge sort
-3) Heap sort
-
-Author: Vincent Maccio
-"""
-
-# ************ Quick Sort ************
-def quicksort(L):
-    copy = quicksort_copy(L)
-    for i in range(len(L)):
-        L[i] = copy[i]
+def quicksort(array):
+    copy = quicksort_copy(array)
+    for i in range(len(array)):
+        array[i] = copy[i]
 
 
-def quicksort_copy(L):
-    if len(L) < 2:
-        return L
-    pivot = L[0]
+def quicksort_copy(array):
+    if len(array) < 2:
+        return array
+    pivot = array[0]
     left, right = [], []
-    for num in L[1:]:
+    for num in array[1:]:
         if num < pivot:
             left.append(num)
         else:
@@ -33,18 +21,18 @@ def quicksort_copy(L):
 
 
 # Improved quicksort
-def quicksort2(L):
-    copy = quicksort_copy2(L)
-    for i in range(len(L)):
-        L[i] = copy[i]
+def quicksort2(array):
+    copy = quicksort_copy2(array)
+    for i in range(len(array)):
+        array[i] = copy[i]
 
 
-def quicksort_copy2(L):
-    if len(L) < 2:
-        return L
-    lp, rp = min(L[0], L[1]), max(L[0], L[1])
+def quicksort_copy2(array):
+    if len(array) < 2:
+        return array
+    lp, rp = min(array[0], array[1]), max(array[0], array[1])
     left, mid, right = [], [], []
-    for num in L[2:]:
+    for num in array[2:]:
         if num < lp:
             left.append(num)
         elif lp <= num <= rp:
@@ -60,62 +48,54 @@ def quicksort_copy2(L):
     )
 
 
-# *************************************
-
-
-# ************ Merge Sort *************
-
-
-def mergesort(L):
-    if len(L) <= 1:
+def mergesort(array):
+    if len(array) <= 1:
         return
-    mid = len(L) // 2
-    left, right = L[:mid], L[mid:]
+    mid = len(array) // 2
+    left, right = array[:mid], array[mid:]
 
     mergesort(left)
     mergesort(right)
     temp = merge(left, right)
 
     for i in range(len(temp)):
-        L[i] = temp[i]
+        array[i] = temp[i]
 
 
 def merge(left, right):
-    L = []
+    array = []
     i = j = 0
 
     while i < len(left) or j < len(right):
         if i >= len(left):
-            L.append(right[j])
+            array.append(right[j])
             j += 1
         elif j >= len(right):
-            L.append(left[i])
+            array.append(left[i])
             i += 1
         else:
             if left[i] <= right[j]:
-                L.append(left[i])
+                array.append(left[i])
                 i += 1
             else:
-                L.append(right[j])
+                array.append(right[j])
                 j += 1
-    return L
+    return array
 
 
-def bottom_up_mergesort(L):
-    width, num = 1, len(L)
+def bottom_up_mergesort(array):
+    width, num = 1, len(array)
     while width < num:
         for i in range(0, num, 2 * width):
-            L[i : i + 2 * width] = merge(L[i : i + width], L[i + width : i + 2 * width])
+            array[i : i + 2 * width] = merge(
+                array[i : i + width], array[i + width : i + 2 * width]
+            )
         width *= 2
 
-# *************************************
 
-# ************* Heap Sort *************
-
-
-def heapsort(L):
-    heap = Heap(L)
-    for _ in range(len(L)):
+def heapsort(array):
+    heap = Heap(array)
+    for _ in range(len(array)):
         heap.extract_max()
 
 
@@ -123,9 +103,9 @@ class Heap:
     length = 0
     data = []
 
-    def __init__(self, L):
-        self.data = L
-        self.length = len(L)
+    def __init__(self, array):
+        self.data = array
+        self.length = len(array)
         self.build_heap()
 
     def build_heap(self):
@@ -156,8 +136,8 @@ class Heap:
         self.length += 1
         self.bubble_up(self.length - 1)
 
-    def insert_values(self, L):
-        for num in L:
+    def insert_values(self, array):
+        for num in array:
             self.insert(num)
 
     def bubble_up(self, i):
@@ -198,6 +178,3 @@ class Heap:
             s += "\n"
             whitespace = whitespace // 2
         return s
-
-
-# *************************************
